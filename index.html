@@ -377,13 +377,22 @@ body{background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',sans-s
 .testimonial-role{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;color:var(--fg3);}
 
 /* ── PROJECT SWITCHER ── */
-.project-tabs{display:flex;gap:6px;margin-bottom:22px;}
-.proj-tab{background:var(--surface2);border:1px solid var(--border2);color:var(--fg2);
-  font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:1.5px;
-  text-transform:uppercase;padding:8px 18px;cursor:pointer;border-radius:6px;
-  transition:all .2s var(--ease);}
-.proj-tab:hover{border-color:var(--gold);color:var(--gold);}
-.proj-tab.active{background:var(--gold-glow);border-color:var(--gold);color:var(--gold);}
+.project-tabs{display:flex;gap:10px;margin-bottom:26px;}
+.proj-tab{background:var(--surface);border:2px solid var(--border2);color:var(--fg2);
+  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600;letter-spacing:1.5px;
+  text-transform:uppercase;padding:14px 28px;cursor:pointer;border-radius:10px;
+  transition:all .25s var(--ease);position:relative;overflow:hidden;}
+.proj-tab::before{content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--gold-glow),var(--blue-glow2));
+  opacity:0;transition:opacity .3s;pointer-events:none;}
+.proj-tab:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px);
+  box-shadow:0 6px 20px var(--shadow);}
+.proj-tab:hover::before{opacity:1;}
+.proj-tab.active{background:linear-gradient(135deg,var(--gold-glow),var(--gold-glow2));
+  border-color:var(--gold);color:var(--gold);
+  box-shadow:0 4px 16px var(--gold-glow),inset 0 0 0 1px rgba(212,168,75,.15);}
+.proj-tab.active::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:30px;height:3px;border-radius:2px;background:var(--gold);}
 .proj-panel{display:none;}
 .proj-panel.active{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start;}
 
@@ -520,7 +529,7 @@ body{background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',sans-s
   .exp-role{font-size:16px;}
   .project-title{font-size:clamp(1.5rem,5vw,2.2rem)!important;}
   .project-tabs{gap:4px;}
-  .proj-tab{padding:7px 12px;font-size:9px;}
+  .proj-tab{padding:12px 20px;font-size:11px;}
   .stat-list{gap:8px;}
   .stat-item{padding:12px 14px;}
   .testimonial{padding:18px 20px;}
@@ -581,7 +590,8 @@ body{background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',sans-s
   .exp-org{font-size:11px;}
   .exp-duties li{font-size:12px;padding-left:14px;}
   .project-tabs{gap:3px;}
-  .proj-tab{padding:6px 10px;font-size:8.5px;letter-spacing:1px;}
+  .project-tabs{gap:6px;}
+  .proj-tab{padding:10px 14px;font-size:10px;letter-spacing:1px;border-radius:8px;}
   .project-title{font-size:clamp(1.2rem,5vw,1.8rem)!important;}
   .project-desc{font-size:12px;line-height:1.7;margin-bottom:14px;}
   .project-chips{gap:5px;margin-bottom:14px;}
