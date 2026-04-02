@@ -488,17 +488,141 @@ body{background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',sans-s
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease-out),transform .5s var(--ease-out);}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
-/* ── RESPONSIVE ── */
+/* ── TABLET (≤1024px) ── */
+@media(max-width:1024px){
+  .page{padding:32px 32px;}
+  .topbar,.bottombar{padding:0 28px;}
+  .intro-grid{grid-template-columns:180px 1fr;gap:30px;}
+  .photo-ring{width:140px;height:140px;}
+  .skills-grid{gap:12px;}
+  .project-tabs{flex-wrap:wrap;}
+  .proj-panel.active{grid-template-columns:1fr 1fr;gap:16px;}
+  .edu-grid{gap:18px;}
+  .exp-num{font-size:32px;}
+  .big-name{font-size:clamp(1.8rem,3.5vw,3rem);}
+}
+
+/* ── SMALL TABLET / LARGE PHONE (≤780px) ── */
 @media(max-width:780px){
-  .page{padding:26px 18px;}
-  .topbar,.bottombar{padding:0 18px;}
+  .page{padding:24px 18px;}
+  .topbar,.bottombar{padding:0 16px;}
   .topbar-nav{display:none;}
-  .intro-grid,.skills-grid,.project-grid,.edu-grid,.contact-grid,.meta-grid{grid-template-columns:1fr;}
-  .intro-grid{gap:22px;}
+  .intro-grid,.skills-grid,.proj-panel.active,.edu-grid,.contact-grid,.meta-grid{grid-template-columns:1fr;}
+  .intro-grid{gap:20px;}
   .profile-col{flex-direction:row;align-items:center;flex-wrap:wrap;gap:14px;}
-  .photo-ring{width:80px;height:80px;}
-  .photo-fallback{font-size:28px;}
+  .photo-ring{width:90px;height:90px;}
+  .photo-ring::after{display:none;}
+  .photo-fallback{font-size:30px;}
+  .big-name{font-size:clamp(1.6rem,6vw,2.4rem);letter-spacing:-1px;}
+  .bio{font-size:13px;line-height:1.75;}
   .btm-label,.pg-txt{display:none;}
+  .exp-num{font-size:28px;top:14px;right:14px;}
+  .exp-role{font-size:16px;}
+  .project-title{font-size:clamp(1.5rem,5vw,2.2rem)!important;}
+  .project-tabs{gap:4px;}
+  .proj-tab{padding:7px 12px;font-size:9px;}
+  .stat-list{gap:8px;}
+  .stat-item{padding:12px 14px;}
+  .testimonial{padding:18px 20px;}
+  .contact-grid{gap:10px;}
+  .email-big-btn{padding:13px 24px;font-size:11px;}
+  .cta-banner{padding:14px 18px;font-size:13px;}
+  .role-flow{gap:6px;}
+  .role-badge{font-size:9px;padding:4px 10px;}
+  .workflow-desc{font-size:11px;padding:8px 12px;}
+  .lb-arrow{width:38px;height:38px;font-size:18px;}
+  .lb-prev{left:10px;}
+  .lb-next{right:10px;}
+  .lightbox img{max-width:92vw;max-height:75vh;}
+  .proj-gallery{gap:8px;}
+  .proj-thumb{width:120px;height:80px;}
+  .proj-thumb-placeholder{width:120px;height:80px;}
+  .tl-row{grid-template-columns:70px 1fr;gap:12px;}
+}
+
+/* ── PHONE (≤480px) ── */
+@media(max-width:480px){
+  .page{padding:20px 14px;}
+  .topbar{height:50px;padding:0 14px;}
+  .bottombar{height:44px;padding:0 14px;}
+  .logo{font-size:12px;}
+  .theme-pill{padding:3px 8px;}
+  .theme-pill-txt{display:none;}
+  .intro-grid{gap:16px;}
+  .profile-col{gap:10px;}
+  .photo-ring{width:68px;height:68px;}
+  .photo-fallback{font-size:22px;}
+  .profile-name{font-size:12px;}
+  .profile-role{font-size:8px;}
+  .big-name{font-size:clamp(1.3rem,7vw,1.8rem);letter-spacing:-0.5px;}
+  .bio{font-size:12px;padding-left:12px;line-height:1.7;}
+  .meta-grid{gap:6px;}
+  .meta-card{padding:9px 12px;}
+  .meta-key{font-size:7px;}
+  .meta-val{font-size:11.5px;}
+  .tag-row{gap:5px;}
+  .chip{padding:5px 10px;font-size:10px;}
+  .resume-btn{padding:10px 18px;font-size:10px;letter-spacing:1px;}
+  .testimonial{padding:14px 16px;margin-top:18px;}
+  .testimonial-quote{font-size:12.5px;padding-left:10px;}
+  .testimonial-name{font-size:11px;}
+  .page-heading{font-size:clamp(1.4rem,6vw,2rem);letter-spacing:-1px;}
+  .eyebrow{font-size:9px;letter-spacing:3px;}
+  .rule{margin:10px 0 18px;}
+  .card{padding:18px 16px;border-radius:12px;}
+  .skills-grid{gap:10px;}
+  .skill-icon{width:30px;height:30px;font-size:14px;}
+  .skill-title{font-size:13px;}
+  .chip-wrap{gap:5px;}
+  .exp-card{padding:18px 16px;}
+  .exp-num{font-size:24px;top:12px;right:12px;}
+  .exp-period{font-size:8px;letter-spacing:2px;}
+  .exp-role{font-size:14px;}
+  .exp-org{font-size:11px;}
+  .exp-duties li{font-size:12px;padding-left:14px;}
+  .project-tabs{gap:3px;}
+  .proj-tab{padding:6px 10px;font-size:8.5px;letter-spacing:1px;}
+  .project-title{font-size:clamp(1.2rem,5vw,1.8rem)!important;}
+  .project-desc{font-size:12px;line-height:1.7;margin-bottom:14px;}
+  .project-chips{gap:5px;margin-bottom:14px;}
+  .demo-btn{padding:10px 16px;font-size:10px;letter-spacing:1px;}
+  .role-flow{gap:4px;margin:10px 0 12px;}
+  .role-badge{font-size:8px;padding:3px 8px;}
+  .role-arrow{font-size:12px;}
+  .workflow-desc{font-size:10px;padding:7px 10px;}
+  .stat-item{padding:10px 12px;}
+  .stat-key{font-size:7px;}
+  .stat-val{font-size:11.5px;}
+  .proj-gallery{gap:6px;margin-top:14px;}
+  .proj-thumb{width:100px;height:68px;border-radius:8px;}
+  .proj-thumb-placeholder{width:100px;height:68px;border-radius:8px;font-size:7px;}
+  .proj-thumb-placeholder span{font-size:16px;}
+  .tl-row{grid-template-columns:60px 1fr;gap:10px;}
+  .tl-yr{font-size:8.5px;}
+  .tl-deg{font-size:12.5px;}
+  .tl-school{font-size:11px;}
+  .cert-item{padding:12px 14px;}
+  .cert-name{font-size:12px;}
+  .cert-meta{font-size:8.5px;}
+  .contact-card{padding:12px 14px;gap:10px;border-radius:10px;}
+  .c-icon{width:34px;height:34px;font-size:15px;border-radius:8px;}
+  .c-label{font-size:7px;}
+  .c-val{font-size:11px;}
+  .email-big-btn{padding:12px 20px;font-size:10px;letter-spacing:1px;}
+  .cta-banner{padding:12px 14px;font-size:12px;line-height:1.7;}
+  .nav-btn{padding:5px 14px;font-size:10px;}
+  .pdot{width:6px;height:6px;}
+  .lb-arrow{width:34px;height:34px;font-size:16px;}
+  .lb-prev{left:8px;}
+  .lb-next{right:8px;}
+  .lb-counter{font-size:10px;bottom:14px;}
+  .lightbox img{max-width:95vw;max-height:70vh;border-radius:6px;}
+  .wlc-name{letter-spacing:-1px;}
+  .wlc-btn{padding:13px 36px;font-size:10px;}
+  .wlc-kicker{font-size:9px;letter-spacing:4px;}
+  .wlc-sub{font-size:10px;letter-spacing:2px;margin-bottom:36px;}
+  .wlc-line{height:40px;margin-bottom:36px;}
+  .wlc-foot{font-size:9px;}
 }
 </style>
 </head>
