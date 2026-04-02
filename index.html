@@ -1023,6 +1023,16 @@ body{background:var(--bg);color:var(--fg);font-family:'Plus Jakarta Sans',sans-s
     if(e.key==='ArrowLeft' ||e.key==='ArrowUp')   goTo(cur-1);
   });
 
+  /* ── Mouse Wheel Navigation ── */
+  let wheelCooldown = false;
+  document.addEventListener('wheel', e => {
+    if(wheelCooldown || welcome.classList.length === 0 || !welcome.classList.contains('hide')) return;
+    wheelCooldown = true;
+    if(e.deltaY > 0) goTo(cur + 1);
+    else if(e.deltaY < 0) goTo(cur - 1);
+    setTimeout(() => { wheelCooldown = false; }, 600);
+  }, {passive:true});
+
   /* ── Welcome ── */
   const welcome  = document.getElementById('welcome');
   document.getElementById('enterBtn').addEventListener('click', ()=> welcome.classList.add('hide'));
